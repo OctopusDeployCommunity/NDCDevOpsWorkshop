@@ -27,6 +27,35 @@ step "Deploy Azure OctoPetShop Web" {
     }
 }
 
+step "Deploy Azure OctoPetShop Web" {
+    properties = {
+        Octopus.Action.TargetRoles = "OctoPetShop-Web"
+    }
+
+    action {
+        action_type = "Octopus.AzureWebApp"
+        properties = {
+            Octopus.Action.Azure.UseChecksum = "False"
+            Octopus.Action.EnabledFeatures = "Octopus.Features.JsonConfigurationVariables"
+            Octopus.Action.Package.DownloadOnTentacle = "False"
+            Octopus.Action.Package.FeedId = "Octopus Server (built-in)"
+            Octopus.Action.Package.JsonConfigurationVariablesTargets = "appsettings.json"
+            Octopus.Action.Package.PackageId = "OctopusSamples.OctoPetShop.Web"
+            OctopusUseBundledTooling = "True"
+        }
+        worker_pool_variable = ""
+
+        packages {
+            acquisition_location = "Server"
+            feed = "Octopus Server (built-in)"
+            package_id = "OctopusSamples.OctoPetShop.Web"
+            properties = {
+                SelectionMode = "immediate"
+            }
+        }
+    }
+}
+
 step "Deploy OctoPetShop Product Service Web App" {
     properties = {
         Octopus.Action.TargetRoles = "OctoPetShop-Product-Service"

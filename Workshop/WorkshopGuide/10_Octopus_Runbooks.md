@@ -94,7 +94,6 @@ In this step, we create the [Azure Web App](https://docs.microsoft.com/en-us/azu
 In this step, we register the Web App with Octopus Deploy. As we're creating the Infrastructure using Octopus, we also need to register it so we can deploy it. 
 
 - In the Runbook, go to **Process**, select **Add step** and select **Run a Script** and name **Register ProductService Web App**
-- Please bind **#{Azure.Account.Name}** to the Azure Account. 
 - Paste the script from the repository and ensure **PowerShell** is selected
 
 ### Create Shopping Cart Service Web App
@@ -119,7 +118,6 @@ In this step, we create the [Azure Web App](https://docs.microsoft.com/en-us/azu
 In this step, we register the Web App with Octopus Deploy. As we're creating the Infrastructure using Octopus, we also need to register it so we can deploy it. 
 
 - In the Runbook, go to **Process**, select **Add step** and select **Run a Script** and name **Register Shopping Cart Web App**
-- Please bind **#{Azure.Account.Name}** to the Azure Account. 
 - Paste the script from the repository and ensure **PowerShell** is selected.
 
 ### Create OctoPetShop Website Web App
@@ -144,7 +142,6 @@ In this step, we create the [Azure Web App](https://docs.microsoft.com/en-us/azu
 In this step, we register the Web App with Octopus Deploy. As we're creating the Infrastructure using Octopus, we also need to register it to deploy it. 
 
 - In the Runbook, go to **Process**, select **Add step** and select **Run a Script** and name **Register OctoPetShop Web App**
-- Please bind **#{Azure.Account.Name}** to the Azure Account. 
 - Paste the script from the repository and ensure **PowerShell** is selected
 
 ## Destroying Infrastructure
